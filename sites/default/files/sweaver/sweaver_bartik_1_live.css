@@ -1,0 +1,26 @@
+.section #name-and-slogan {
+  font-family: 'Comic Sans MS',Cursive;
+}
+
+#name-and-slogan #site-slogan {
+  font-style: normal;
+  text-align: center;
+  background-color: #2e182e;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  font-family: 'Courier New',Courier,Monospace;
+  line-height: 23px;
+}
+
+a img {
+  color: #787d80;
+}
+
+a span {
+  line-height: 64px;
+  font-size: 67px;
+  font-family: 'Courier New',Courier,Monospace;
+}
+
