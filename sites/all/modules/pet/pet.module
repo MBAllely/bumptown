@@ -1,0 +1,19 @@
+<?php
+function pet_menu() {
+    $items = array();
+    $items['pet'] = array(
+        'title' => "Kaycee <3",
+        'page callback' => 'pet_display',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function pet_display() {
+    return '<p>Kaycee is the best cat in the whole world.  You may think your cat is a better cat, and you are not wrong.  But Kaycee is the objective best cat.  Tess is also good.</p>
+
+    <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/11921607_10153114142738364_7631853293114477449_n.jpg?oh=7f9876375fcdab0569162cb887cecda6&oe=5774F2CC" alt="Kaycee">';
+}
+
+ ?>
