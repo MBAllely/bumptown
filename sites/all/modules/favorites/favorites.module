@@ -1,0 +1,59 @@
+<?php
+$GLOBALS['favorites'] = array(
+    'Movies' => array(
+        "The Rabbi's Cat",
+        "Reanimator",
+        "Dreams in the Witch House"
+    ),
+    'Books' => array(
+        "Funhome",
+        "Worm",
+        "Skin"
+    ),
+    'Songs' => array(
+        "Divine Moments of Truth",
+        "Hey Mami",
+        "Could I Be"
+    )
+);
+
+
+function favorites_menu() {
+    $items = [];
+    foreach($GLOBALS['favorites'] as $favorite => $name) {
+        $items['favorites/' . $favorite] = array(
+            'title' => 'My Favorite ' . $favorite,
+            'page callback' => 'favorites_callback_' . $favorite,
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM
+        );
+    }
+    return $items;
+}
+
+function favorites_callback_Movies() {
+    $output = "";
+    foreach($GLOBALS['favorites']['Movies'] as $value) {
+        $output .= '<h2>' . $value . '</h2>';
+    }
+    return $output;
+}
+
+function favorites_callback_Books() {
+    $output = "";
+    foreach($GLOBALS['favorites']['Books'] as $value) {
+        $output .= '<h2>' . $value . '</h2>';
+    }
+    return $output;
+}
+
+function favorites_callback_Songs() {
+    $output = "";
+    foreach($GLOBALS['favorites']['Songs'] as $value) {
+        $output .= '<h2>' . $value . '</h2>';
+    }
+    return $output;
+}
+
+
+ ?>
