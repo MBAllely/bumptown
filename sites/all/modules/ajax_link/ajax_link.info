@@ -1,0 +1,6 @@
+name = Second Ajax: jQuery and ajax
+description = Together at last!
+package = Epicodus Examples
+core = 7.x
+files[] = ajax_link.module
+scripts[] = ajax_link.js
