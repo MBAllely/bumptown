@@ -24,4 +24,8 @@ function mymodule_ajax_callback($js, $node_id) {
     //here we prepare an ajax command to insert the node's HTML into our div under News - the wrapper.
     $commands = array();
     $commands[] = ajax_command_html('#mymodule-ajax-wrapper', $html);
+
+    // Render the commands into JSON data format and execute them by printing them to the browser.
+    print ajax_render($commands);
+    exit;  // Exit so Drupal doesn't have a chance to build a whole page.
 }
