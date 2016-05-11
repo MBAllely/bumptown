@@ -1,0 +1,5 @@
+name = Ajax Reader
+description = SHRUG
+package = Epicodus Examples
+core = 7.x
+files[] = ajax_reader.module
