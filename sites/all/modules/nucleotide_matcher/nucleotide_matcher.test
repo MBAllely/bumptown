@@ -1,0 +1,25 @@
+<?php
+class NucleotideMatcherTestCase extends DrupalUnitTestCase
+{
+    public static function getInfo() {
+        return array(
+            'name' => 'Nucleotide Matcher unit tests',
+            'description' => 'Test that the input and output correspond.',
+            'group' => 'Custom Modules Tests',
+        );
+    }
+
+    function testNucleotideMatcher() {
+        //English description
+        $description = '"ATC" should return "TAG".';
+
+        //Arrange
+        $input = 'ATC';
+
+        //Act
+        $result = nucleotide_matcher($input);
+
+        //Assert
+        $this->assertEqual($result, 'T A G', '"ATC" resolves to "TAG".');
+    }
+}
