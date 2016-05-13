@@ -23,3 +23,27 @@ class NucleotideMatcherTestCase extends DrupalUnitTestCase
         $this->assertEqual($result, 'T A G', '"ATC" resolves to "TAG".');
     }
 }
+
+class NucleotideMatcherTestFunctionality extends DrupalWebTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Nucleotide Matcher Functional Test',
+      'description' => 'Test the Nucleotide Matcher functionality',
+      'group' => 'Custom Modules Tests',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp(array('nucleotide_matcher'));
+  }
+
+  public function testDnaGeneratorMapping() {
+    $edit = array();
+    $edit['dna_input'] = 'TAGCA';
+
+    $this->drupalPost('/nucleotide_matcher', $edit, t('Go!'));
+    $this->assertText(t('A T C G T'), t('Test passsed.'));
+  }
+
+}
