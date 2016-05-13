@@ -21,7 +21,7 @@ You will need the following things properly installed on your computer.
 * `git clone https://github.com/MBAllely/Bumptown.git`
 * change into the new directory
 * Start up mamp and point servers to main directory
-* Go to localhost:8888/phpmyadmin in browser and import `Bumptown/sites/db-backup
+* Go to localhost:8888/phpmyadmin in browser and import `Bumptown/sites/db-backup`
 * Create DB username `Bumptown` with password `bumptown`
 * Go to localhost:8888 to view Drupal project.
 
