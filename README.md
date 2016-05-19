@@ -30,7 +30,7 @@ You will need the following things properly installed on your computer.
 
 ## Usernames and Passwords
 * DB: `Bumptown:password`
-* DB username: `Bumptown:bumptown`
+* DB username: `bumptown:bumptown`
 * Drupal site maintenance account: `admin:bumptown`
 
 ## Running / Development
