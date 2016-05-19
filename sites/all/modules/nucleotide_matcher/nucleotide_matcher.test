@@ -9,18 +9,88 @@ class NucleotideMatcherTestCase extends DrupalUnitTestCase
         );
     }
 
-    function testNucleotideMatcher() {
+    function testNucleotideMatcherA() {
         //English description
-        $description = '"ATC" should return "TAG".';
+        $description = '"A" should return "T".';
 
         //Arrange
-        $input = 'ATC';
+        $input = 'A';
 
         //Act
         $result = nucleotide_matcher($input);
 
         //Assert
-        $this->assertEqual($result, 'T A G', '"ATC" resolves to "TAG".');
+        $this->assertEqual($result, 'T', '"A" resolves to "T".');
+    }
+
+    function testNucleotideMatcherT() {
+        //English description
+        $description = '"T" should return "A".';
+
+        //Arrange
+        $input = 'T';
+
+        //Act
+        $result = nucleotide_matcher($input);
+
+        //Assert
+        $this->assertEqual($result, 'A', '"T" resolves to "A".');
+    }
+
+    function testNucleotideMatcherG() {
+        //English description
+        $description = '"G" should return "C".';
+
+        //Arrange
+        $input = 'G';
+
+        //Act
+        $result = nucleotide_matcher($input);
+
+        //Assert
+        $this->assertEqual($result, 'C', '"G" resolves to "C".');
+    }
+
+    function testNucleotideMatcherC() {
+        //English description
+        $description = '"C" should return "G".';
+
+        //Arrange
+        $input = 'C';
+
+        //Act
+        $result = nucleotide_matcher($input);
+
+        //Assert
+        $this->assertEqual($result, 'G', '"C" resolves to "G".');
+    }
+
+    function testNucleotideMatcherDuplicates() {
+        //English description
+        $description = '"CC" should return "GG".';
+
+        //Arrange
+        $input = 'CC';
+
+        //Act
+        $result = nucleotide_matcher($input);
+
+        //Assert
+        $this->assertEqual($result, 'G G', '"CC" resolves to "GG".');
+    }
+
+    function testNucleotideMatcherMultipleLetters() {
+        //English description
+        $description = '"ATCG" should return "TAGC".';
+
+        //Arrange
+        $input = 'ATCG';
+
+        //Act
+        $result = nucleotide_matcher($input);
+
+        //Assert
+        $this->assertEqual($result, 'T A G C', '"ATCG" resolves to "TAGC".');
     }
 }
 
@@ -39,11 +109,10 @@ class NucleotideMatcherTestFunctionality extends DrupalWebTestCase {
   }
 
   public function testDnaGeneratorMapping() {
-    $edit = array();
-    $edit['dna_input'] = 'TAGCA';
+    $input['dna_input'] = 'TAGCA';
 
-    $this->drupalPost('/nucleotide_matcher', $edit, t('Go!'));
-    $this->assertText(t('A T C G T'), t('Test passsed.'));
+    $this->drupalPost('/nucleotide_matcher', $input, t('Go!'));
+    $this->assertText(t('A T C G T'), t('Test passed.'));
   }
 
 }
